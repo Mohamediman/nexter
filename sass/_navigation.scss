@@ -1,0 +1,128 @@
+/*
+=====BREAK POINTS 
+=1200  => 1300/16 => 81.25em
+=1200  => 1100/16 => 68.75em
+=900 ==> 900/16 => 56.25em
+=600  ==> 600/16 => 37.5rem
+@media only screen and (max-width: 75em)
+*/
+
+.navigation-container {
+  width: 100%;
+  justify-items: space-between;
+  grid-gap: 2rem;
+  padding-bottom: 1rem;
+
+  &.grid {
+    margin-bottom: 0;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  & img {
+    width: 25rem;
+    justify-self: start;
+    filter: brightness(10%);
+
+    @media only screen and (max-width: 68.75em) {
+      width: 20rem;
+    }
+  }
+
+  & .lists {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media only screen and (max-width: 56.25em) {
+      display: none;
+      opacity: 0;
+    }
+
+    & .list {
+      font-size: 1.8rem;
+      padding: 0.2rem 0.4rem;
+      color: inherit;
+      border: none;
+      border: 1px solid $color-tertiary;
+      transition: all 0.3s;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      @media only screen and (max-width: 81.25em) {
+        font-size: 2rem;
+      }
+
+      &:hover,
+      &:active {
+        background-color: $color-primary;
+        color: $color-secondary;
+      }
+    }
+  }
+
+  //===== Mobile navigations ====
+  & .navigation-mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    align-items: end;
+    padding: 1rem 2rem;
+    background-color: $color-secondary;
+
+    z-index: 999;
+
+    @media only screen and (max-width: 56.25em) {
+      display: flex;
+      opacity: 1;
+    }
+
+    & .icons {
+      align-self: end;
+      & svg {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+
+        transition: all 0.5s;
+
+        &:hover {
+          transform: rotate(180deg);
+        }
+        &.hide {
+          display: none;
+          visibility: 0;
+        }
+      }
+    }
+
+    & .mobile--lists {
+      display: flex;
+      flex-direction: column;
+
+      transition: all 0.5s;
+
+      z-index: 999;
+
+      &.hide {
+        display: none;
+        visibility: 0;
+      }
+
+      & .list {
+        font-size: 1.8rem;
+        padding: 0.4rem 0.8rem;
+        color: inherit;
+        border: none;
+        border: 1px solid $color-tertiary;
+        transition: all 0.3s;
+      }
+    }
+  }
+}
