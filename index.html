@@ -154,7 +154,7 @@
           <a href="#" class="cottage">
             <figure>
               <div class="cottage-img">
-                <img src="img/feature-01.jpeg" alt="first bed room" />
+                <img src="img/feature-01.jpeg" alt="first bed room"/>
               </div>
               <div class="contents">
                 <h5>Premium Room</h5>
@@ -303,32 +303,6 @@
       </footer>
     </main>
 
-    <script>
-      const iconClick = document.querySelector(".navigation-mobile .icons");
-      const menuItems = document.querySelector(
-        ".navigation-mobile .mobile--lists"
-      );
-      const icons = document.querySelectorAll(
-        ".navigation-mobile .icons .icon"
-      );
-      iconClick.addEventListener("click", (e) => {
-        const elementClicked = e.target.closest("svg");
-
-        //==== toggle Menu Lists
-        if (elementClicked.classList.contains("icons--open")) {
-          menuItems.classList.remove("hide");
-        } else if (elementClicked.classList.contains("icons--close")) {
-          menuItems.classList.add("hide");
-        }
-        //====toggle Icons
-        icons.forEach((el) => {
-          if (el.classList.contains("hide")) {
-            el.classList.remove("hide");
-          } else {
-            el.classList.add("hide");
-          }
-        });
-      });
-    </script>
+    <script src="script/script.js"></script>
   </body>
 </html>

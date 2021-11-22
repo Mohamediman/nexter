@@ -81,7 +81,8 @@
 
         & img {
           width: 100%;
-
+          transform: scale(1);
+          // transform: perspective(0) translateX(0) scale(0.95);
           transition: all 0.5s;
         }
         & .contents {
@@ -153,7 +154,7 @@
 }
 
 .cottages--bottom .cottage:hover .cottage-img img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .cottages--bottom .cottage--img:hover .cottage .contents#contents {
